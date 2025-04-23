@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "lln-lab"
+version = "1.0.0"
+description = "A hands-on lab to explore how the Law of Large Numbers plays out through simulations and visual insights."
+authors = ["Lorenzo Chiovini"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+numpy = "^2.2.5"
+plotly = "^6.0.1"
+streamlit = "^1.44.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
