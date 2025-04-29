@@ -15,14 +15,14 @@ logging.basicConfig(
 st.set_page_config(page_title="Law of Large Numbers Lab", layout="wide")
 st.title("Law of Large Numbers Lab")
 
-st.sidebar.header("Simulation Settings")
+st.sidebar.header("Simulation settings")
 
-distribution = st.sidebar.selectbox("Choose a distribution", options=list(Distribution))
-num_simulations = st.sidebar.slider("Number of simulations", min_value=1, max_value=10, value=3)
-sample_size = st.sidebar.slider("Sample size", min_value=10, max_value=2000, step=10)
+distribution = st.sidebar.selectbox("Select a probability distribution", options=list(Distribution))
+num_simulations = st.sidebar.slider("Number of simulation runs", min_value=1, max_value=10, value=3)
+sample_size = st.sidebar.slider("Number of samples per simulation", min_value=10, max_value=2000, step=10)
 
-if st.sidebar.button("Run Simulation"):
-    with st.spinner("Generating simulations..."):
+if st.sidebar.button("Run experiments"):
+    with st.spinner("Generating..."):
         expected_value = get_expected_value(distribution)
         formatted_expected_value = f"{expected_value:.2f}".rstrip("0").rstrip(".")
 
@@ -51,7 +51,7 @@ if st.sidebar.button("Run Simulation"):
         ))
 
     fig.update_layout(
-        title="Convergence of sample means to expected value",
+        title="Convergence of Sample Means to the Expected Value",
         xaxis_title="n (sample size)",
         yaxis_title="X̄ₙ (sample mean)",
         showlegend=True,
